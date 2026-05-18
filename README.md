@@ -5,7 +5,7 @@ IMPORTANTE: abaixo estará um tutorial completo sobre ricing, o guia é extremam
 
 Porém, se quer entender um pouco mais sobre o sistema e como algumas linguagens de programação funciona, fique à vontade para ler! Não precisa ser tudo, se quer apenas compreender a waybar por exemplo, então vá na parte da waybar, não tem muito segredo. 
 
-Peço perdão pelos erros de português a maioria desse guia foi escrito em uma madrugada Às 3 horas da manhã. Eu prometo que não sou analfabeto :P
+Peço perdão pelos erros de português a maioria desse guia foi escrito em uma madrugada as 3 horas da manhã, não sei se isso ficou bom, pois é a primeira vez que faço um "manual". Eu prometo que não sou analfabeto :P
 
 ---------
 
