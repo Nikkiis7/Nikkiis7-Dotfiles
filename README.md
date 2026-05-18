@@ -76,7 +76,7 @@ Para descobrir o seu monitor, coloque no terminal
 
 E com isso, você descobrirá o nome do seu monitor. É praticamente a primeira linha depois do nome "Monitor".
 
-![Foto de exemplo](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/print-2026-05-17_23-38-04.png)
+![Foto de exemplo](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/imagens/print-2026-05-17_23-38-04.png)
 
 No meu caso, o nome é HDMI-A-1, portanto eu adicionei.
 
@@ -96,7 +96,7 @@ wallpaper {
 
 Você apenas adiciona esses comandos, substituindo claro o seu diretório e depois você pode reiniciar sua sessão do hyprland e pronto, você terá um wallpaper :D
 
-![Wallpaper](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/print-2026-05-17_23-53-50.png)
+![Wallpaper](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/imagens/print-2026-05-17_23-53-50.png)
 
 ---------
 
@@ -510,7 +510,7 @@ Aqui tem algumas formas de se usar os workspaces, a primeira é a mais tradicion
 
 Exemplo:
 
-![Rice](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/print-2026-05-18_01-53-18.png)
+![Rice](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/imagens/print-2026-05-18_01-53-18.png)
 
 Como vocês podem ver na imagem a cima do rice do Joao Bola Bola as workspaces são em formato de número (Belo rice por sinal xD)
 
@@ -644,7 +644,7 @@ format-disconnected: basicamente é o que vai aparecer na waybar se você não e
 
 Seria os aplicativos em segundo plano que vão aparecer na sua waybar. 
 
-![Exemplo](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/print-2026-05-18_02-24-59.png)
+![Exemplo](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/imagens/print-2026-05-18_02-24-59.png)
 
 ```
 "tray": {
