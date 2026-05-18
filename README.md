@@ -7,6 +7,10 @@ Porém, se quer entender um pouco mais sobre o sistema e como algumas linguagens
 
 Peço perdão pelos erros de português a maioria desse guia foi escrito em uma madrugada as 3 horas da manhã, não sei se isso ficou bom, pois é a primeira vez que faço um "manual". Eu prometo que não sou analfabeto :P
 
+O projeto está em desenvolvimento ainda, falta muita coisa lol
+
+Acredito que esteja uns 20% finalizado.
+
 ---------
 
 # Introdução:
