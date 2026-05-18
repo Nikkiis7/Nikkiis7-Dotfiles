@@ -148,7 +148,7 @@ Depois disso, você deve criar dois arquivos dentro dessa pasta da waybar, o con
 
 touch = cria um arquivo vazio
 
-- 4º Passo: Configuração do Jsonc
+# Parte 2.1: Configuração do Jsonc
 
 Primeiro, vamos configurar a alma de nossa waybar, o config.jsonc, para isso, eu recomendo usar um outro editor de texto, como nvim ou o vscode, mas se quiser prosseguir com o nano, fique à vontade.
 
