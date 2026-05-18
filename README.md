@@ -90,7 +90,7 @@ Você apenas adiciona esses comandos, substituindo claro o seu diretório e depo
 
 ![Wallpaper](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/print-2026-05-17_23-53-50.png)
 
-# Parte 1.1 | E se eu quiser trocar o meu wallpaper?
+# Parte 1.1: E se eu quiser trocar o meu wallpaper?
 
 É bem simples, basta pegar a imagem e renomeá-la com a do seu wallpaper antigo.
 
@@ -100,7 +100,7 @@ Porém, obviamente é necessário você apagar o wallpaper antigo ou mudar o nom
 
 Para informações mais precisas, acesse o site oficial do hyprland falando sobre o hyprpaper: https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/
 
-# Parte 2 | A Waybar
+# Parte 2: A Waybar
 
 A waybar, como é conhecida, é uma barra que fica no topo da tela e apresenta algumas informações, como o horário, as workspaces, consumo de ram, cpu, etc. É muito usada pela maioria dos usuários de Hyprland, mesmo que seja mais voltado para a estética.
 
@@ -313,7 +313,7 @@ Sabendo disso, basta configurar o relógio da forma que você quiser!
 
 `"{:%a %d/%m/%Y ~ %I:%M %p}"`
 
-Aí ficaria?
+Aí ficaria:
 
 Dom 17/05/2026 ~ 11:20 PM
 
@@ -433,4 +433,172 @@ Portanto, agora temos:
   "interval": 60
 },
 ````
+- Logo customizável (opcional)
+
+Para colocar uma logo, basta coloca-la no módulo que você quer, eu por exemplo, como você viu na minha configuração, coloquei ela na esquerda, mas você pode colocar ela onde quiser :)
+
+`"modules-left": ["custom/arch","hyprland/workspaces"],`
+
+"custom/arch" é a nossa logo, portanto, vamos coloca-la no arquivo!
+```
+  "custom/arch": {
+    "format": 
+    "tooltip": 
+  },
+````
+
+Se você percebeu, o padrão é o mesmo do relógio, com format e tooltip, então no format, você pode adicionar a logo que você quiser por meio do site do Nerd Fonts!
+
+Site: https://www.nerdfonts.com/
+
+Eu usei a logo do arch linux, já que é o meu sistema operacional btw. (lol xD)
+
+Portanto, basta:
+
+```
+  "custom/arch": {
+    "format": "",
+    "tooltip": false
+  },
+```
+
+Pronto, colocamos a logo, agora ela vai aparecer na esquerda! Bem fácil!
+
+- Workspaces (exclusivo hyprland):
+
+Basicamente são um indicador para mostrar quantas workspaces você tem ou em qual você está, é bem legal e útil para você não se perder!
+
+`"modules-left": ["custom/arch","hyprland/workspaces"],`
+
+Nós adicionamso então o "hyprland/workspaces" e vamos configurá-lo!
+
+```
+"hyprland/workspaces": {
+    "format": "{id}",
+    "format-icons": {}
+}
+```
+
+Aqui tem algumas formas de se usar os workspaces, a primeira é a mais tradicional, usando os números
+
+Exemplo:
+
+![Rice](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/print-2026-05-18_01-53-18.png)
+
+Como vocês podem ver na imagem a cima do rice do Joao Bola Bola as workspaces são em formato de número (Belo rice por sinal xD)
+
+Porém, tem outra forma (que é a que eu uso inclusive), por meio de símbolos, para isso:
+
+```
+"hyprland/workspaces": {
+  "format": "{icon}",
+  "format-icons": {
+    "default": "",
+    "active": "󰮯"
+  }
+},
+```
+- default: a forma com que os símbolos vão ficar, no meu caso eu coloquei uma bola
+- active: quando você está na sua workspace atual, ela troca por esse símbolo
+
+No meu caso, eu usei uma bola e um pacman (xD) pra representar, experimente da forma que quiser!
+
+- CPU e Memória RAM
+
+Vai mostrar a porcentagem da memória ram e cpu, é muito fácil de adicionar, portanto, vamos escolher onde elas vão ficar na barra! 
+
+  `"modules-right": [""memory","cpu"],`
+
+Ficará no módulo direito, então para configurar, basta:
+
+```
+"memory": {
+  "format": "{percentage}%"
+},
+
+"cpu": {
+  "format": "{usage}%"
+},
+```
+
+Não tem muito o que explicar, kk, basta colocar a porcentagem e aparecerá.
+
+Para customizar, você pode colocar um símbolo, ou apenas "CPU" e "RAM", vai da sua preferência.
+
+OBS: Nesse caso, tente usar o que eu chamo de "espaços forçados". O que é isso? Que brisa é essa? Basicamente se você usar um espaço normal, a formatação na waybar não vai ou seja, se eu coloco por exemplo:
+
+"format": "  = {percentage}%"
+
+Com espaço normal, na waybar vai ficar 10% por exemplo. Pode ficar meio esquisito, então eu recomendo usar um "espaço fantasma", que aí vai ficar certinho (espero que você tenha entendido, pelo amor de Deus ;-;) 
+
+Espaço fantasma para adicionar = " " 
+
+Só copie esse espaço e adicione :D
+
+Continuando...
+
+Minha configuração:
+
+```
+// - Memória RAM - \\
+
+"memory": {
+  "format": "  = {percentage}%"
+},
+
+// - Processador | CPU - \\
+
+"cpu": {
+  "format": "  = {usage}%"
+},
+```
+
+- Audio:
+
+Não tem muito segredo, a gente vai usar a mesma forma dos outros módulos.
+
+IMPORTANTE: A partir desse ponto, se você está lendo este documento desde o início (o que eu acho difícil), vou começar a ser mais direto, pois acredito que você já tenha compreendido como funciona o jsonc na waybar, então não preciso ficar explicando muita coisa. Se não entendeu, eu recomendo você voltar o documento e ler com mais calma.
+
+```
+"pulseaudio": {
+  "format": "{volume}%",
+```
+
+Não tem segredo, você só coloca o volume e com isso, você consegue ver na waybar e usar o scroll para diminuir, se você quiser.
+
+Minha configuração:
+
+```
+// - Audio - \\
+
+"pulseaudio": {
+  "format": "  = {volume}%",
+  "format-muted": " = muted",
+  "format-icons": {
+    "default": ["","",""]
+
+  }
+
+},
+```
+
+Eu apenas coloquei um ícone e coloquei o formato de mutado, ou seja, se o volume chegar em zero, o ícone aparece como mutado.
+
+- Internet:
+
+Vai mostrar a sua internet na waybar.
+
+```
+"network": {
+  "format-ethernet": "  = ethernet",
+  "format-disconnected": "󰖪  = offline",
+  "tooltip": true
+},
+```
+
+format-ethernet: é para se você usa ethernet, ou seja, internet cabeada no seu computador.
+format-wifi: é para se você usa wifi.
+
+No meu caso, a minha internet é cabeada, então eu não preciso do format-wifi, o contrário também serve, se você tem internet via wifi, você não precisa do format-ethernet.
+
 
