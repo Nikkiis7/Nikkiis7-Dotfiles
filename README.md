@@ -265,3 +265,172 @@ drawer = efeito de transição
 
 Se não quiser usar o drawer, basta ignorar group na frente e adicionar os nomes normalmente.
 
+- Configurando cada módulo:
+
+Agora, vamos configurar cada módulo de nosso jsonc, vamos começar pelo relógio:
+
+- Relógio | Versão sem drawer
+
+Para configurar o relógio, você deve colocar o nome igual está nos modules.
+
+```
+"clock": {
+    "format": 
+    "tooltip": 
+  },
+```
+
+Veja como não é tão difícil a waybar, cada módulo terá o:
+- format = o formato, como aquele módulo irá aparecer
+- tooltip = uma pequena caixa de informações quando você passa o mouse
+
+A maioria dos módulos irão usar esse mesmo formato, com algumas modificações, claro!
+
+- "format": é o formato do relógio, você quer que ele seja de 24 horas? 12 horas? QUe apareça os segundos? Etc...
+
+Formatos:
+- %a - dia da semana abreviado (ex: Dom, Seg, Ter)
+- %d - dia do mês com dois dígitos 
+- %m - mês com dois dígitos 
+- %H - hora no formato 24h 
+- %M - minutos 
+- %S - segundos
+- %I - horário 12 horas
+- %p - mostrar o AM e PM (apenas para relógio 12 horas)
+- %y - mostrar o ano (2 dígitos)
+- %Y - mostrar o ano com 4 dígitos (2026)
+
+Sabendo disso, basta configurar o relógio da forma que você quiser!
+
+```
+"clock": {
+    "format": "{:%I:%M:%S}",
+    "tooltip": 
+  },
+  ```
+
+É um exemplo do que eu uso, mas se quiser, pode tentar o formato completo:
+
+`"{:%a %d/%m/%Y ~ %I:%M %p}"`
+
+Aí ficaria?
+
+Dom 17/05/2026 ~ 11:20 PM
+
+Vai da sua preferência!
+
+- Tooltip:
+
+O tooltip, eu acho que não tem tanta importância, mas, basicamente vai aparecer uma caixa quando você passa o mouse em cima.
+
+Para o relógio, eu deixo em false, mas se quiser ativar, deixe em true.
+
+```
+"clock": {
+    "format": "{:%I:%M:%S}",
+    "tooltip": false
+  },
+  ```
+
+- Relógio | com drawer:
+
+Se quiser usar o drawer, você deverá mudar o nome do "clock" lá nos modules e renomear para "group/clock".
+
+Isso serve pra qualquer módulo que você quiser usar o drawer.
+
+```
+"group/clock": {
+  "orientation": "horizontal",
+
+  "drawer": {
+    "transition-duration": 200,
+    "transition-left-to-right": true
+  },
+
+  "modules": [
+    "custom/clock",
+    "custom/date"
+  ]
+},
+
+"custom/clock": {
+  "exec": "date '+%I:%M:%S'",
+  "interval": 1
+},
+
+"custom/date": {
+  "exec": "date '+  󰃭  = %d/%m/%Y'",
+  "interval": 60
+},
+```
+
+Para explicar essa parte, irei usar a minha configuração como base.
+
+- orientation = direção que os itens ficam organizados (horizontal = lado a lado)
+  
+drawer = efeito de gaveta que esconde/mostra os módulos do grupo
+
+- transition-duration = tempo da animação em milissegundos (200 = 0.2 segundos)
+- transition-left-to-right = direção que a gaveta abre (true = da esquerda pra direita)
+
+
+- modules = lista dos módulos que fazem parte do grupo
+
+
+- custom/clock = módulo personalizado que mostra o horário
+
+- exec = comando que ele roda para pegar a informação (date '+%I:%M:%S' = hora:minuto:segundo)
+- interval = de quantos em quantos segundos ele atualiza (1 = todo segundo) [exclusivo se você quer usar segundos no seu relógio, se não, não precisa]
+
+
+- custom/date = módulo personalizado que mostra a data
+
+- exec = roda date '+%d/%m/%Y' para pegar o dia/mês/ano, o 󰃭 é um ícone de calendário (Nerd Font)
+- interval = atualiza a cada 60 segundos (já que a data muda só uma vez por dia, não precisa ser tão frequente)
+
+Fique à vontade pra copiar as minhas configuraçẽos se quiser!
+
+Portanto, agora temos:
+
+```
+// - Alma - \\
+
+{
+  "layer": "top",
+  "position": "top",
+  "height": 45,
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": ["custom/arch","hyprland/workspaces"],
+  "modules-center": ["group/clock"],
+  "modules-right": ["group/tray","custom/arrow","network","pulseaudio","memory","cpu"],
+
+  // - Relógio - \\
+
+"group/clock": {
+  "orientation": "horizontal",
+
+  "drawer": {
+    "transition-duration": 200,
+    "transition-left-to-right": true
+  },
+
+  "modules": [
+    "custom/clock",
+    "custom/date"
+  ]
+},
+
+"custom/clock": {
+  "exec": "date '+%I:%M:%S'",
+  "interval": 1
+},
+
+"custom/date": {
+  "exec": "date '+  󰃭  = %d/%m/%Y'",
+  "interval": 60
+},
+````
+
