@@ -825,5 +825,9 @@ Fique à vontade para usar, se quiser copiar minhas configurações!
 
 # Parte 2.2: Configurando o style.css
 
+OBS: As explicações que eu vou mostrar aqui, vão ser de acordo com as minhas configurações, que eu acredito que será o suficiente para você entender e fazer sua própria waybar, mas acredito que se você quiser ter o domínio total de sua waybar, aí é só sabendo css mesmo.
+
+`nano ~/.config/waybar/style.css`
+
 
 
