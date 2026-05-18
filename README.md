@@ -114,5 +114,154 @@ A waybar pode parecer complicada de se mexer, visto que você terá que trabalha
 
 Você consegue agora usar a waybar, e testá-la soltando `waybar` no terminal, de início, você verá que ela é bem feia, mas calma, vamos customizá-la de acordo com o seu gosto.
   
+- 2º Passo: Configurar para inciar junto com o sistema
 
+É essencial fazer essa mudança para a waybar poder iniciar junto com o sistema, se não você precisará digitar waybar toda hora no terminal para poder enxergá-la.
+
+Abra a sua configuração do hyprland.
+
+nano ~/.config/hypr/hyprland.conf
+
+Agora, você deve procurar pela aba de AUTOSTART em seu hyprland.conf
+
+Na aba de AUTOSTART, coloque:
+
+`exec-once - waybar`
+
+Pronto, agora quando você iniciar o seu sistema, a waybar vai iniciar automaticamente.
+
+- 3º Passo: Criar um diretório para a waybar
+
+Utilize o comando:
+
+`mkdir -p ~/.config/waybar`
+
+mkdir = basicamente uma abreviação de (Make Directory), serve para criar um diretório.
+
+-p = basicamente garante que a pasta não dê erro se já for criada.
+
+Depois disso, você deve criar dois arquivos dentro dessa pasta da waybar, o config.jsonc e o style.css
+
+`touch ~/.config/waybar/config.jsonc`
+
+`touch ~/.config/waybar/style.css`
+
+touch = cria um arquivo vazio
+
+- 4º Passo: Configuração do Jsonc
+
+Primeiro, vamos configurar a alma de nossa waybar, o config.jsonc, para isso, eu recomendo usar um outro editor de texto, como nvim ou o vscode, mas se quiser prosseguir com o nano, fique à vontade.
+
+`nano ~/.config/waybar/config.jsonc`
+
+Vamos começar com o básico:
+
+```
+{
+  "layer": 
+  "position": 
+  "height": 
+  "margin-top": 
+  "margin-left": 
+  "margin-right": 
+
+  "modules-left": 
+  "modules-center": 
+  "modules-right":
+```
+
+Essa é a estrutura básica de uma waybar.
+
+Um adendo, quando você abrir esse arquivo, é possível que ele venha com coisas dentro, eu recomendo apagar tudo!
+
+Vamos começar a explicação!
+
+O básico de um jsonc, é que o arquivo deve inciar e terminar com {}, portanto, inicie o seu documento com um {
+
+Depois prossiga com a explicação:
+
+- "layer": basicamente define a camada visual da waybar, se ela vai ficar na frente de tudo ou atrás.
+
+top = a barra fica na frente de tudo, sempre visível mesmo com janelas abertas
+
+bottom = a barra fica atrás das janelas, só aparece quando não tem nada na frente
+
+Minha recomendação, utilizar o top!
+
+- "position": auto-explicativo, define a posição de sua waybar, se você quer ela no topo, em baixo, na direita, esquerda.
+
+top = barra no topo
+bottom = barra em baixo
+left = barra na esquerda
+right = barra na direita
+
+Aqui é mais gosto pessoal e também depende do tipo de rice que você quer fazer, mas eu prefiro deixar a barra no topo!
+
+- "height": também é auto-explicativo, define o tamanho da sua waybar.
+
+Eu coloco a minha em 45, que é um tamanho mediano, mas eu recomendo você ir testando.
+
+OBS: vai dando o comando `killall waybar` e `waybar` pra ir testando as coisas e vendo as alterações.
+
+- "margin"(top,left,right,bottom): basicamente a margem da sua waybar de acordo com a sua tela.
+
+Se você quer deixar ela totalmente colada na tela, então deixa 0 em tudo, mas eu recomendo você ir testando e vendo a maneira que te agrada.
+
+Como eu prefiro que ela fique flutuando, eu coloco 10 em tudo :D
+
+- "modules"(right,left,center): aqui será basicamente a posição de onde ficará cada item em sua waybar.
+
+Essa parte é totalmente opcional do usuário, cada um deixa as suas coisas onde elas querem.
+
+Nome das propriedades que serão usadas aqui:
+- clock = relógio
+- network = internet
+- pulseaudio = audio
+- memory = memória ram
+- -cpu = processador
+- tray = aplicativos em segundo plano
+- hyprland/workspaces = espaços de trabalho do hyprland
+- -custom/arch = logo customizável (opcional)
+
+Vamos por exemplo pegar o relógio(clock), se você quer deixá-lo no centro, você deve colocá-lo em:
+
+`modules-center": ["clock"],`
+
+Se quiser na direita, coloque em:
+
+`"modules-right": ["clock"],`
+
+OBS: vale lembrar que os itens que você coloca devem ser colocados na ordem exata que você quer, pois a ordem que está aí no código, é a ordem que vai aparecer na waybar.
+
+Por exemplo, se eu colocar:
+
+`"modules-right": ["cpu","clock"],`
+
+O que vai aparecer é a cpu e o relógio em sua respectiva ordem.
+
+Enfim, essa parte é totalmente opcional, configure da maneira que prefirir, mas nas minhas configurações, ela ficou assim! 
+
+```
+// - Alma - \\
+
+{
+  "layer": "top",
+  "position": "top",
+  "height": 45,
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": ["custom/arch","hyprland/workspaces"],
+  "modules-center": ["group/clock"],
+  "modules-right": ["group/tray","custom/arrow","network","pulseaudio","memory","cpu"],
+```
+
+Fique à vontade se quiser copiar!
+
+OBS: O que é esse "group"? É uma configuração um pouco mais avançada para adicionar configurações secundárias a esses módulos, como por exemplo o drawer, que será explicado mais pra frente.
+
+drawer = efeito de transição
+
+Se não quiser usar o drawer, basta ignorar group na frente e adicionar os nomes normalmente.
 
