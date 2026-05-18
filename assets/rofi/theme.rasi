@@ -1,0 +1,59 @@
+* {
+    background-color: #00000000;
+    text-color: #ffffff;
+    font: "Monocraft 14";
+    border-radius: 10px;
+}
+
+window {
+    width: 30%;
+    background-color: #000000cc;
+    border: 2px;
+    borde-radius: 10px;
+    border-color: #ffffff;
+    location: center;
+}
+
+listview {
+    background-color: transparent;
+    spacing: 6px;
+    padding: 8px;
+}
+
+element {
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element selected {
+    background-color: #ffffff;
+    text-color: #000000;
+    border-radius: 8px;
+}
+
+inputbar {
+    background-color: #000000cc;
+    padding: 12px;
+    spacing: 10px;
+    border-radius: 5px;
+    border: 1px;
+    border-color: #ffffff;
+}
+
+entry {
+    placeholder: "󰮯     ";
+    cursor-color: transparent;
+}
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    drun-display-format: "{name}";
+    display-drun: "";
+}
