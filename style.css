@@ -1,0 +1,102 @@
+/* Alma */
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.74);
+  border-radius: 10px;
+  color: white;
+}
+
+* {
+  border: none;
+  box-shadow: none;
+  min-height: 0;
+}
+
+/* Relógio */
+
+#clock {
+  font-size: 20px;
+  padding: 0 5px;
+  color: white
+}
+
+#clock:hover {
+  background: rgba(255,255,255,0.08);
+  min-width: 110px;
+  padding: 0 5px;
+  border-radius: 20px
+
+}
+
+* {
+  border: none;
+  box-shadow: none;
+  min-height: 0;
+}
+
+/* Fonte */
+
+* {
+  font-family: "Minecraft";
+}
+
+/* Logo do Arch */
+
+#custom-arch {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+/* Workspaces */
+
+#workspaces {
+  all: unset;
+  margin-left: 20px;
+  margin-right: 10px;
+  font-size: 20px;
+  transition: all 0.5s ease;
+
+}
+
+/* Audio */
+
+#pulseaudio {
+  padding: 0 10px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/* Memória RAM */ 
+
+#memory {
+  padding: 0 10px;
+font-size: 20px;
+}
+
+/* CPU */
+
+#cpu {
+  padding: 0 20px;
+  font-size: 20px;
+  padding-left: 10px;
+
+}
+
+/* Internet */ 
+
+#network {
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+/* Tray */
+
+#tray {
+  padding: 0 10px;
+  font-size: 20px;
+  transition: 0.2s ease;
+
+}
+
+/* Feito por Ryan Matsui :D*/
