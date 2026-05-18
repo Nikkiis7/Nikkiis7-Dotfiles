@@ -1,6 +1,8 @@
 # Nikkiis7-Dotfiles
 Um guia completo sobre ricing, tudo que você precisa para entender sobre a personalização do seu sistema operacional Linux Hyprland. Se você quer somente minhas dotfiles, elas estarão em uma parte separada do site!
 
+---------
+
 # Introdução:
 
 Primeiro, o que seria um rice? No mundo do linux, rice seria a personalização do seu sistema, tudo que você faz para alterar e deixar estéticamente agradável de acordo com seu gosto, fugindo da estética padrão dos sistemas operacionais. 
@@ -20,6 +22,8 @@ Os aplicativos externos que serão usados:
 
 Um último adendo, **ESSE TUTORIAL NÃO FOI FEITO PARA ADICIONAR MELHORIAS NO SISTEMA, TODAS AS MUDANÇAS APRESENTADAS AQUI SÃO TOTALMENTE ESTÉTICAS, RECOMENDO CONFIGURAR O SISTEMA HYPRLAND PRIMEIRO ANTES DE PROSSEGUIR COM O TUTORIAL!**
 
+---------
+
 # Parte 1: Definir um Wallpaper (Específico para Hyprland)
 
 De início, o que todo usuário pensa ao personalizar o seu sistema, é óbviamente mudar o seu wallpaper
@@ -34,6 +38,8 @@ Abra seu terminal e coloque:
 
 `sudo pacman -S hyprpaper`
 
+---------
+
 - 2º passo | Configurar o diretório do hyprland:
 
 No terminal, coloque o seguinte comando:
@@ -47,6 +53,8 @@ nano = basicamente ele abre um editor simples no próprio terminal, irei usá-lo
 hypr = pasta central do hyprland
 
 Agora que você soltou esse comando no terminal, você pode continuar a configuração!
+
+---------
 
 3º passo | Configuração: 
 
@@ -90,6 +98,8 @@ Você apenas adiciona esses comandos, substituindo claro o seu diretório e depo
 
 ![Wallpaper](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/print-2026-05-17_23-53-50.png)
 
+---------
+
 # Parte 1.1: E se eu quiser trocar o meu wallpaper?
 
 É bem simples, basta pegar a imagem e renomeá-la com a do seu wallpaper antigo.
@@ -99,6 +109,8 @@ Por exemplo: o meu wallpaper antigo se chamava heaven.png, para eu trocar basta 
 Porém, obviamente é necessário você apagar o wallpaper antigo ou mudar o nome dele, para evitar problemas no reconhecimento.
 
 Para informações mais precisas, acesse o site oficial do hyprland falando sobre o hyprpaper: https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/
+
+---------
 
 # Parte 2: A Waybar
 
@@ -113,6 +125,8 @@ A waybar pode parecer complicada de se mexer, visto que você terá que trabalha
   `sudo pacman -S waybar`
 
 Você consegue agora usar a waybar, e testá-la soltando `waybar` no terminal, de início, você verá que ela é bem feia, mas calma, vamos customizá-la de acordo com o seu gosto.
+
+---------
   
 - 2º Passo: Configurar para inciar junto com o sistema
 
@@ -129,6 +143,8 @@ Na aba de AUTOSTART, coloque:
 `exec-once - waybar`
 
 Pronto, agora quando você iniciar o seu sistema, a waybar vai iniciar automaticamente.
+
+---------
 
 - 3º Passo: Criar um diretório para a waybar
 
@@ -147,6 +163,8 @@ Depois disso, você deve criar dois arquivos dentro dessa pasta da waybar, o con
 `touch ~/.config/waybar/style.css`
 
 touch = cria um arquivo vazio
+
+---------
 
 # Parte 2.1: Configuração do Jsonc
 
@@ -269,7 +287,9 @@ Se não quiser usar o drawer, basta ignorar group na frente e adicionar os nomes
 
 Agora, vamos configurar cada módulo de nosso jsonc, vamos começar pelo relógio:
 
-- Relógio | Versão sem drawer
+---------
+
+- Relógio | Versão sem drawer:
 
 Para configurar o relógio, você deve colocar o nome igual está nos modules.
 
@@ -331,6 +351,8 @@ Para o relógio, eu deixo em false, mas se quiser ativar, deixe em true.
     "tooltip": false
   },
   ```
+
+---------
 
 - Relógio | com drawer:
 
@@ -433,6 +455,9 @@ Portanto, agora temos:
   "interval": 60
 },
 ````
+
+---------
+
 - Logo customizável (opcional)
 
 Para colocar uma logo, basta coloca-la no módulo que você quer, eu por exemplo, como você viu na minha configuração, coloquei ela na esquerda, mas você pode colocar ela onde quiser :)
@@ -463,6 +488,8 @@ Portanto, basta:
 ```
 
 Pronto, colocamos a logo, agora ela vai aparecer na esquerda! Bem fácil!
+
+---------
 
 - Workspaces (exclusivo hyprland):
 
@@ -502,6 +529,8 @@ Porém, tem outra forma (que é a que eu uso inclusive), por meio de símbolos, 
 - active: quando você está na sua workspace atual, ela troca por esse símbolo
 
 No meu caso, eu usei uma bola e um pacman (xD) pra representar, experimente da forma que quiser!
+
+---------
 
 - CPU e Memória RAM
 
@@ -553,6 +582,8 @@ Minha configuração:
 },
 ```
 
+---------
+
 - Audio:
 
 Não tem muito segredo, a gente vai usar a mesma forma dos outros módulos.
@@ -584,6 +615,8 @@ Minha configuração:
 
 Eu apenas coloquei um ícone e coloquei o formato de mutado, ou seja, se o volume chegar em zero, o ícone aparece como mutado.
 
+---------
+
 - Internet:
 
 Vai mostrar a sua internet na waybar.
@@ -605,6 +638,8 @@ No meu caso, a minha internet é cabeada, então eu não preciso do format-wifi,
 
 format-disconnected: basicamente é o que vai aparecer na waybar se você não estiver com internet.
 
+---------
+
 - Tray:
 
 Seria os aplicativos em segundo plano que vão aparecer na sua waybar. 
@@ -620,6 +655,8 @@ Seria os aplicativos em segundo plano que vão aparecer na sua waybar.
 
 - icon-size: tamanho dos ícones
 - spacing: espaço entre eles e o resto dos módulos
+
+ ---------
 
 - Tray com Drawer:
 
@@ -651,6 +688,8 @@ Minhas configurações ficam assim:
 O que é essa custom/tray-arrow? Basicamente é uma seta que fica na waybar que quando eu passo o mouse em cima, os ícones do tray aparecem, fica bem legal!
 
 Você pode colocar o símbolo que quiser.
+
+---------
 
 - Finalização:
 
@@ -781,6 +820,10 @@ Minha configuração final:
 ```
 
 Fique à vontade para usar, se quiser copiar minhas configurações!
+
+---------
+
+# Parte 2.2: Configurando o style.css
 
 
 
