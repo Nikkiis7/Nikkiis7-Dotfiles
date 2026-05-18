@@ -1,0 +1,158 @@
+/* =========================
+   GERAL
+========================= */
+
+* {
+    font-family: "Monocraft";
+    font-size: 20px;
+    color: white;
+}
+
+/* =========================
+   CENTRAL
+========================= */
+
+.control-center {
+    background: #000000cc;
+    border-radius: 24px;
+    border: 2px solid rgb(255, 255, 255);
+
+    padding: 12px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.widget-title,
+.widget-dnd,
+.widget-mpris,
+.widget-buttons-grid,
+.notification {
+    background: rgba(17, 17, 17, 0.9);
+
+    border-radius: 20px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    padding: 14px;
+
+    border: 1px solid rgb(255, 255, 255);
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   AVATAR
+========================= */
+
+.widget-title {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    padding-left: 68px;
+    background-image: url("/home/ryanmatsui/Downloads/avatar.png");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    background-position: 8px center;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button {
+    background: rgba(10, 10, 10, 0.9);
+
+    border-radius: 999px;
+
+    border: none;
+
+    padding: 10px;
+
+    transition: 200ms;
+}
+
+button:hover {
+    background: rgba(241, 241, 241, 0.9);
+}
+
+/* =========================
+   NOTIFICAÇÕES
+========================= */
+
+.notification {
+    padding: 12px;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.summary {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.body {
+    color: #cfcfcf;
+}
+
+/* =========================
+   MPRIS
+========================= */
+
+.widget-mpris {
+    padding: 20px;
+}
+
+.widget-mpris-player {
+    border-radius: 18px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+scrollbar {
+    opacity: 0;
+}
+
+/* =========================
+   VOLUME
+========================= */
+.widget-volume scale trough {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    min-height: 4px;
+}
+
+.widget-volume scale trough highlight {
+    background: white;
+    border-radius: 999px;
+    min-height: 4px;
+}
+
+.widget-volume scale {
+    color: white;
+    padding: 8px 0;
+}
+
+.widget-volume scale {
+    padding-left: 12px;
+}
+
+/* =========================
+   BOTÕES GRID
+========================= */
+
+.widget-buttons-grid flowbox {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.widget-buttons-grid flowboxchild button {
+    min-width: 70px;
+    min-height: 70px;
+}

@@ -1,0 +1,62 @@
+{
+    "positionX": "right",
+    "positionY": "top",
+    "layer": "overlay",
+    "notification-window-width": 500,
+    "timeout": 3,
+    "control-center-width": 500,
+    "control-center-height": 700,
+    "control-center-margin-right": 10,
+    "control-center-margin-top": 10,
+    "widgets": [
+        "title",
+        "dnd",
+        "buttons-grid",
+        "volume",
+        "notifications",
+        "mpris"
+    ],
+    "widget-config": {
+        "title": {
+            "text": "Ryan Matsui",
+            "clear-all-button": true,
+            "button-text": "Clear"
+        },
+        "volume": {
+            "label": "󰕾",
+            "show-per-app": false
+        },
+        "dnd": {
+            "text": "  Não Perturbe"
+        },
+        "mpris": {
+            "image-size": 90,
+            "image-radius": 12,
+            "cover-size": 90
+        },
+        "buttons-grid": {
+            "actions": [
+                {
+                    "label": "󰹑",
+                    "command": "grim -g \"$(slurp)\" ~/Images/screenshot-$(date +%Y%m%d-%H%M%S).png"
+                },
+                {
+                    "label": "󰩬",
+                    "command": "grim ~/Images/screenshot-$(date +%Y%m%d-%H%M%S).png"
+                },
+                {
+                    "label": "",
+                    "command": "nmcli radio wifi on",
+                    "active-command": "nmcli radio wifi off",
+                    "type": "toggle"
+                },
+                {
+                    "label": "󰝟",
+                    "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+                    "type": "toggle"
+                }
+            ],
+            "columns": 4
+        }
+    }
+}
