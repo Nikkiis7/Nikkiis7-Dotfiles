@@ -597,8 +597,14 @@ Vai mostrar a sua internet na waybar.
 ```
 
 format-ethernet: é para se você usa ethernet, ou seja, internet cabeada no seu computador.
-format-wifi: é para se você usa wifi.
+format-wifi: é para se você usa wifi. No seu caso, você coloca {essid}.
+
+`"format-wifi": "  = {essid}",`
 
 No meu caso, a minha internet é cabeada, então eu não preciso do format-wifi, o contrário também serve, se você tem internet via wifi, você não precisa do format-ethernet.
 
+format-disconnected: basicamente é o que vai aparecer na waybar se você não estiver com internet.
 
+- Tray:
+
+Seria os aplicativos em segundo plano que vão aparecer na sua waybar. 
