@@ -608,3 +608,179 @@ format-disconnected: basicamente é o que vai aparecer na waybar se você não e
 - Tray:
 
 Seria os aplicativos em segundo plano que vão aparecer na sua waybar. 
+
+![Exemplo](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/print-2026-05-18_02-24-59.png)
+
+```
+"tray": {
+    "icon-size": 
+    "spacing": 
+}
+```
+
+- icon-size: tamanho dos ícones
+- spacing: espaço entre eles e o resto dos módulos
+
+- Tray com Drawer:
+
+Para ficar mais bonito e agradável, eu costumo usar o tray com o drawer (módulo já apresentado antes)
+
+Minhas configurações ficam assim:
+
+```
+"group/tray": {
+  "orientation": "horizontal",
+
+  "drawer": {
+    "transition-duration": 200,
+    "transition-left-to-right": false
+  },
+
+  "modules": [
+    "custom/tray-arrow",
+    "tray"
+  ]
+},
+
+"custom/tray-arrow": {
+  "format":"",
+  "tooltip": false
+}
+```
+
+O que é essa custom/tray-arrow? Basicamente é uma seta que fica na waybar que quando eu passo o mouse em cima, os ícones do tray aparecem, fica bem legal!
+
+Você pode colocar o símbolo que quiser.
+
+- Finalização:
+
+Com isso, finalizamos o jsonc e estamos aptos para ir ao css.
+
+Minha configuração final:
+
+```
+// - Alma - \\
+
+{
+  "layer": "top",
+  "position": "top",
+  "height": 45,
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": ["custom/arch","hyprland/workspaces"],
+  "modules-center": ["group/clock"],
+  "modules-right": ["group/tray","custom/arrow","network","pulseaudio","memory","cpu"],
+
+  // - Relógio - \\
+
+"group/clock": {
+  "orientation": "horizontal",
+
+  "drawer": {
+    "transition-duration": 200,
+    "transition-left-to-right": true
+  },
+
+  "modules": [
+    "custom/clock",
+    "custom/date"
+  ]
+},
+
+"custom/clock": {
+  "exec": "date '+%I:%M:%S'",
+  "interval": 1
+},
+
+"custom/date": {
+  "exec": "date '+  󰃭  = %d/%m/%Y'",
+  "interval": 60
+},
+
+   // - Logo do Arch - \\
+
+  "custom/arch": {
+    "format": "",
+    "tooltip": false
+  },
+
+  // - Workspace - \\ 
+
+  "hyprland/workspaces": {
+  "format": "{icon}",
+  "format-icons": {
+    "default": "",
+    "active": "󰮯"
+  }
+},
+
+// - Memória RAM - \\
+
+"memory": {
+  "format": "  = {percentage}%"
+},
+
+// - Processador | CPU - \\
+
+"cpu": {
+  "format": "  = {usage}%"
+},
+
+// - Audio - \\
+
+"pulseaudio": {
+  "format": "  = {volume}%",
+  "format-muted": " = muted",
+  "format-icons": {
+    "default": ["","",""]
+
+  }
+
+},
+
+// - Internet - \\
+
+"network": {
+  "format-ethernet": "  = ethernet",
+  "format-disconnected": "󰖪  = offline",
+  "tooltip": true
+},
+
+// - Tray - \\
+
+"tray": {
+  "spacing": 20,
+  "icon-size": 20
+
+},
+
+"group/tray": {
+  "orientation": "horizontal",
+
+  "drawer": {
+    "transition-duration": 200,
+    "transition-left-to-right": false
+  },
+
+  "modules": [
+    "custom/tray-arrow",
+    "tray"
+  ]
+},
+
+"custom/tray-arrow": {
+  "format":"",
+  "tooltip": false
+}
+
+}
+
+// - Feito por Ryan Matsui :D
+```
+
+Fique à vontade para usar, se quiser copiar minhas configurações!
+
+
+
