@@ -1,5 +1,5 @@
 # Nikkiis7-Dotfiles
-Um guia completo sobre ricing, tudo que você precisa para entender sobre a personalização do seu sistema operacional Linux Hyprland. Se você quer somente minhas dotfiles, elas estarão em uma parte separada do site!
+Um guia completo sobre ricing, tudo que você precisa para entender sobre a personalização do seu sistema operacional Linux Hyprland. Se você quer somente minhas dotfiles, elas estarão na pasta chamada "assets"!
 
 ---------
 
