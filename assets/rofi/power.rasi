@@ -1,0 +1,55 @@
+* {
+    background-color: #00000000;
+    text-color: #ffffff;
+    font: "Monocraft 22";
+}
+
+window {
+    background-color: #000000cc;
+    width: 1000px;
+    location: center;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px;
+    border-color: #ffffff;
+}
+
+listview {
+    layout: horizontal;
+    spacing: 8px;
+    lines: 5;
+    fixed-height: true;
+    fixed-columns: true;
+    height: 340px;
+}
+
+element {
+    background-color: transparent;
+    padding: 40px 0px;
+    border-radius: 12px;
+    orientation: vertical;
+    children: [element-icon, element-text];
+    expand: true;
+    width: 184px;
+}
+
+element.selected {
+    background-color: #ffffff20;
+}
+
+element-icon {
+    size: 72px;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    margin: 14px 0px 0px 0px;
+}
+
+inputbar {
+    enabled: false;
+}
