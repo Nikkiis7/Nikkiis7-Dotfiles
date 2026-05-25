@@ -1232,7 +1232,7 @@ transition: all 0.2s ease;
 
 Se você seguiu todas as configurações, sua barra deverá ficar parecida com isso:
 
-![Imagem](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/upload)
+![Imagem](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/blob/main/imagens/print-2026-05-25_19-04-32.png)
 
 ---------
 
