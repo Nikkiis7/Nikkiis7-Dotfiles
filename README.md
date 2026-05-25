@@ -1230,6 +1230,10 @@ transition: all 0.2s ease;
 /* Feito por Ryan Matsui :D*/
 ```
 
+Se você seguiu todas as configurações, sua barra deverá ficar parecida com isso:
+
+![Imagem](https://github.com/Nikkiis7/Nikkiis7-Dotfiles/upload)
+
 ---------
 
 
