@@ -839,5 +839,399 @@ OBS: As explicações que eu vou mostrar aqui, vão ser de acordo com as minhas 
 
 `nano ~/.config/waybar/style.css`
 
+Vamos começar configurando a nossa barra, o que eu chamo de "Alma", onde vão ficar as nossas coisas. Mas, no css, você não precisa seguir uma ordem, se quiser começar pela fonte por exemplo, você pode começar.
+
+```
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+```
+- backgorund-color: seria a cor de fundo;
+- border-radius: seria o arredondamento da borda;
+- border: seria a borda, a cor e a espressura dela;
+- color: seria a cor do texto
+- px: seria a espressura de alguma coisa, estará presente em todo o arquivo.
+
+O css é bem mais simples e fácil de se configurar, essas opções que você acabou de ver irá se repetir até o fim do documento, então será fácil de se lembrar.
+
+Aqui eu segui uma borda preta e com uma borda branca, mas você pode personalizar da forma que quiser.
+
+OBS: Essa parte do CSS está sendo escrita logo após as "atualizações" que fiz em minha waybar, portanto, se você pegar as waybar que está presente na parte de "assets" ela será um pouco diferente dessa daqui.
+
+---------
+
+- Relógio:
+
+```
+#clock {
+  font-size: 20px;
+  padding: 0 5px;
+  color: #ffffff;
+  border-radius: 10px;
+  margin: 5px 2px;
+      transition: all 0.2s ease;
+```
+
+Aqui, será implementando novos comandos:
+
+- font-size: tamanho da fonte;
+- padding: a posição do módulo o primeiro valor, seria sua posição verticalmente e o segundo, seria horizontalmente;
+- color: cor do relógio (já foi explicado antes)
+- margin: seria a margem, é bem parecido com o padding;
+- transition: seria basicamente uma transição/animação que faz no relógio quando você passa o mouse em cima.
+
+- Hover:
+
+O hover, nada mais é como um efeito quando você passa o mouse em cima, para adicionar é am esma coisa em todos os outros módulos.
+
+```
+#clock:hover {
+    color: #a4a4a4;
+}
+```
+
+Eu coloquei um hover no relógio para quando eu passar o mouse, ele mude a cor, mas se quiser, pode trocar por background, vai de sua preferência.
+
+
+---------
+
+- Fonte:
+
+Para adicionar uma fonte, você precisará usar o font-family:
+
+```
+* {
+  font-family: "Minecraft";
+}
+```
+
+É a fonte que eu uso, mas você pode usar a de sua preferência.
+
+
+---------
+
+- Logo customizada:
+
+```
+/* Logo do Arch */
+
+#custom-arch {
+  color: #ffffff;
+  font-size: 20px;
+  padding-left: 20px;
+    padding-right: 7px;
+    transition: all 0.2s ease;
+}
+
+#custom-arch:hover {
+    color: #1793d1;
+    margin: 0 1px;
+}
+```
+
+- padding-left/right: seria uma forma mais específica de colocar o padding, especificando o lado em que você quer deixar. Vai de sua preferência usar assim, ou o padding normal.
+  
+
+Eu adicionei um hover na logo do arch, onde quando eu passo o mouse em cima, a logo fica azul. O margin serve para que o hover não fique fora do lugar.
+
+---------
+
+- Workspaces:
+
+```
+#workspaces {
+  all: unset;
+  margin-left: 20px;
+  margin-right: 10px;
+  font-size: 20px;
+  transition: all 0.5s ease;
+
+}
+
+#workspaces button:hover {
+  background: rgb(220, 220, 220);
+  color:rgb(0, 0, 0);
+    transition: all 0.2s ease;
+    border-radius: 0px;
+}
+```
+
+Nas workspaces, eu apenas adicionei um hover, onde quando eu passo o mouse, muda o fundo para branco, apenas isso.
+
+---------
+
+- Resto das configs:
+
+Agora que você já sabe o básico do css, o resto das configurações são as mesmas coisas, fique olhando:
+
+```
+/* Audio */
+
+#pulseaudio {
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 8);
+  border-radius: 999px;
+  margin: 10px 10px;
+  border: 1px solid rgb(255, 255, 255);
+  color: #c0bec2;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+#pulseaudio:hover {
+  color: rgba(0, 0, 0, 8);
+  background-color: rgb(220, 220, 220)
+}
+
+/* Memória RAM */ 
+
+#memory {
+padding: 0 10px;
+background-color:rgba(0, 0, 0, 8);
+border-radius: 999px;
+margin: 10px 10px;
+border: 1px solid rgb(255, 255, 255);
+font-size: 15px;
+color: #c0bec2;
+transition: all 0.2s ease;
+}
+
+#memory:hover {
+  color: rgba(0, 0, 0, 8);
+  background-color: rgb(220, 220, 220)
+}
+
+/* CPU */
+
+#cpu {
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 8);
+  border-radius: 999px;
+  margin: 10px 10px;
+  border: 1px solid rgb(255, 255, 255);
+  font-size: 15px;
+  margin-right: 20px;
+  color: #c0bec2;
+  transition: all 0.2s ease;
+
+}
+
+#cpu:hover {
+  color: rgba(0, 0, 0, 8);
+  background-color: rgb(220, 220, 220)
+}
+
+/* Internet */ 
+
+#network {
+  background-color: rgba(0, 0, 0, 8);
+  border-radius: 999px;
+  border: 1px solid rgb(255, 255, 255);
+  margin: 10px 10px;
+  padding: 0 10px;
+  font-size: 15px;
+  color: #c0bec2;
+  transition: all 0.2s ease;
+}
+
+#network:hover {
+  color: rgba(0, 0, 0, 8);
+  background-color: rgb(220, 220, 220)
+}
+
+#custom-network-icon {
+    padding: 0 6px;
+    font-size: 15px;
+}
+
+/* Tray */
+
+#tray {
+  padding: 0 10px;
+  font-size: 20px;
+  transition: 0.2s ease;
+
+}
+```
+
+Veja que são os mesmos comandos para os mesmos módulos, não tem muito o que explicar aqui, basta ir alterando conforme sua preferência e ir testando.
+
+---------
+
+Configuração final:
+
+```
+/* Alma */
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+* {
+  border: none;
+  box-shadow: none;
+  min-height: 0;
+}
+
+/* Relógio */
+
+#clock {
+  font-size: 20px;
+  padding: 0 5px;
+  color: #ffffff;
+  border-radius: 10px;
+  margin: 5px 2px;
+      transition: all 0.2s ease;
+}
+
+#clock:hover {
+    color: #a4a4a4;
+}
+
+* {
+  border: none;
+  box-shadow: none;
+  min-height: 0;
+}
+
+/* Fonte */
+
+* {
+  font-family: "Minecraft";
+}
+
+/* Logo do Arch */
+
+#custom-arch {
+  color: #ffffff;
+  font-size: 20px;
+  padding-left: 20px;
+    padding-right: 7px;
+    transition: all 0.2s ease;
+}
+
+#custom-arch:hover {
+    color: #1793d1;
+    margin: 0 1px;
+}
+
+/* Workspaces */
+
+#workspaces {
+  all: unset;
+  margin-left: 20px;
+  margin-right: 10px;
+  font-size: 20px;
+  transition: all 0.5s ease;
+
+}
+
+#workspaces button:hover {
+  background: rgb(220, 220, 220);
+  color:rgb(0, 0, 0);
+    transition: all 0.2s ease;
+    border-radius: 0px;
+}
+
+/* Audio */
+
+#pulseaudio {
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 8);
+  border-radius: 999px;
+  margin: 10px 10px;
+  border: 1px solid rgb(255, 255, 255);
+  color: #c0bec2;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+#pulseaudio:hover {
+  color: rgba(0, 0, 0, 8);
+  background-color: rgb(220, 220, 220)
+}
+
+/* Memória RAM */ 
+
+#memory {
+padding: 0 10px;
+background-color:rgba(0, 0, 0, 8);
+border-radius: 999px;
+margin: 10px 10px;
+border: 1px solid rgb(255, 255, 255);
+font-size: 15px;
+color: #c0bec2;
+transition: all 0.2s ease;
+}
+
+#memory:hover {
+  color: rgba(0, 0, 0, 8);
+  background-color: rgb(220, 220, 220)
+}
+
+/* CPU */
+
+#cpu {
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 8);
+  border-radius: 999px;
+  margin: 10px 10px;
+  border: 1px solid rgb(255, 255, 255);
+  font-size: 15px;
+  margin-right: 20px;
+  color: #c0bec2;
+  transition: all 0.2s ease;
+
+}
+
+#cpu:hover {
+  color: rgba(0, 0, 0, 8);
+  background-color: rgb(220, 220, 220)
+}
+
+/* Internet */ 
+
+#network {
+  background-color: rgba(0, 0, 0, 8);
+  border-radius: 999px;
+  border: 1px solid rgb(255, 255, 255);
+  margin: 10px 10px;
+  padding: 0 10px;
+  font-size: 15px;
+  color: #c0bec2;
+  transition: all 0.2s ease;
+}
+
+#network:hover {
+  color: rgba(0, 0, 0, 8);
+  background-color: rgb(220, 220, 220)
+}
+
+#custom-network-icon {
+    padding: 0 6px;
+    font-size: 15px;
+}
+
+/* Tray */
+
+#tray {
+  padding: 0 10px;
+  font-size: 20px;
+  transition: 0.2s ease;
+
+}
+
+/* Feito por Ryan Matsui :D*/
+```
+
+---------
+
+
 
 
